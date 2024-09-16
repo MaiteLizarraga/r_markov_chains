@@ -1,9 +1,9 @@
-# Ejercicio 1: representación gráfica de la Cadena de Markov.
+# Representamos gráficamente la Cadena de Markov.
 
-# install.packages("shape")
-# install.packages("heemod")
-# install.packages("mvnfast")
-# install.packages("diagram")
+install.packages("shape")
+install.packages("heemod")
+install.packages("mvnfast")
+install.packages("diagram")
 
 library('heemod')
 library('diagram')
@@ -20,8 +20,8 @@ plot(mat_dim)
 # 0.5 + p + 2p = 1 -> 0.5 + 3p = 1 -> p = 1/6
 # Por tanto, 2p = 1/3
 
-# Ejercicio 2: Generamos la cadena de markov, la matriz P, por filas, teniendo
-# en cuenta el valor de alpha que se nos da en nuestro intento (en este caso es 2).
+# Generamos la cadena de markov, la matriz P, por filas, teniendo en cuenta
+# el valor de alpha que se nos da en nuestro intento (en este caso es 2).
 
 p = 1/6
 alpha = 2
@@ -38,7 +38,7 @@ print(suma_filas)
 suma_columnas <- colSums(P)
 print(suma_columnas)
 
-# Ejercicio 3: ¿Cuál es la probabilidad de que el próximo domingo también haga
+# ¿Cuál es la probabilidad de que el próximo domingo también haga
 # sol?
 # Para saber qué tiempo hará el domingo, vamos a calcular la probabilidad
 # condicionadas de que haga sol el domingo dado que el lunes hizo sol. 
@@ -70,8 +70,7 @@ print(Pi6)
 # Vemos que la probabilidad de que el domingo haga sol es del 27.15%, menor que
 # el 33%, por lo tanto Dorothy NO se inscribirá en la carrera.
 
-# Ejercicio 4:
-# De la misma manera que en el ejercicio 3, calculamos la probabilidad condicio-
+# De la misma manera que en el ejercicio precedente, calculamos la probabilidad condicio-
 # nada de que el domingo haga sol dado que el lunes nevó. Para ello vamos a sacar
 # el producto de la matriz P elevada a n para el vector de probabilidades del día
 # actual.
@@ -88,7 +87,7 @@ print(Pi6nieve)
 # Vemos que la probabilidad de que el domingo haga sol habiendo nevado el lunes
 # es del 26.77%, algo menor que en el caso anterior.
 
-# Ejercicio 5: Si hoy hace sol, ¿cuál es la probabilidad de que hubiera llovido
+# Si hoy hace sol, ¿cuál es la probabilidad de que hubiera llovido
 # ayer? ¿Y cuál es la probabilidad de que hubiera nevado ayer?
 # Teorema de Bayes y Teorema de la Probabilidad Total
 
@@ -111,23 +110,23 @@ print(prob_n_igual_L_si_n_mas_1_igual_S)
 # NIEVE:
 
 # Probabilidad de que mañana haga sol sabiendo que hoy nieva:
-prob_n_mas_1_igual_S_si_n_igual_L <- 0.5
+prob_n_mas_1_igual_S_si_n_igual_N <- 0.5
 
 # Probabilidad de que hoy esté nevando:
-prob_n_igual_L <- 1
+prob_n_igual_N <- 1
 
 # Probabilidad total de que mañana haga sol:
 prob_n_mas_1_igual_S <- suma_columnas[1]
 
-prob_n_igual_L_si_n_mas_1_igual_S <- (prob_n_mas_1_igual_S_si_n_igual_L * prob_n_igual_L) / prob_n_mas_1_igual_S
-print(prob_n_igual_L_si_n_mas_1_igual_S)
+prob_n_igual_N_si_n_mas_1_igual_S <- (prob_n_mas_1_igual_S_si_n_igual_N * prob_n_igual_N) / prob_n_mas_1_igual_S
+print(prob_n_igual_N_si_n_mas_1_igual_S)
 
-# Ejercicio 6: esta cadena es regular o irregular?
+# esta cadena es regular o irregular?
 # La cadena es regular ya que al elevar P a varios números enteros vemos que 
 # todos los pij son positivos.
 
 
-# Ejercicio 7: Calcular la distribución estacionaria.
+# Calcular la distribución estacionaria.
 # Estado estacionario = distribución límite de estados
 
 # Comprobamos que P y Pt tienen vap = 1

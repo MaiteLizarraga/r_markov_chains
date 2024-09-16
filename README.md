@@ -1,8 +1,8 @@
-# Discrete Markov Chains project in R
+# Stocastic Processes and Discrete Time Markov Chains-project in R
 
 Knowing how to model a system using discrete-time dynamical systems can be very useful in the field of data science. This is exactly to we aim to achieve with this project.
 
-## Starting hypothesis
+## Starting hypotheses
 
 According to Kemeny, Snell and Thompson (Introduction to Finite Mathematics), the Land of Oz is fortunate in many things, but not in nice weather:
 
